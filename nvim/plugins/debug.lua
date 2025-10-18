@@ -8,7 +8,10 @@ return {
 	},
 	config = function()
 		require("dapui").setup()
-		require("dap-python").setup("~/.local/share/nvim/mason/packages/debugpy/venv/bin/python")
+		require("dap-python").setup(
+			"~/.local/share/nvim/mason/packages/debugpy/venv/bin/python"
+			-- vim.fn.getcwd() .. '/venv/bin/python'
+		)
 		local dap, dapui = require("dap"), require("dapui")
 		require("dap-python").test_runner = "pytest"
 		require("dap-go").setup({
