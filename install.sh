@@ -34,8 +34,9 @@ if [ -d $OMARCHY_CONFIG_DIR ]; then
 fi
 
 echo "📦  Injecting your custom NeoVim config..."
-cp -r nvim/plugins/* $NVIM_CONFIG/lua/plugins/
-cp -r nvim/config/* $NVIM_CONFIG/lua/config/
+cp -r nvim/* $NVIM_CONFIG/lua
+#cp -r nvim/config $NVIM_CONFIG/lua
+#cp -r nvim/utils $NVIM_CONFIG/lua
 
 echo "🧹 Clearing mason cache..."
 rm -rf "$NVIM_DATA/mason"
